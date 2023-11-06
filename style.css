@@ -7,12 +7,25 @@ body {
   justify-content: center;
   flex-direction: column;
   height: 100vh;
-  background-color: #f0f0f0;
+  background-image: url(./images/jeopardy_background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #start-screen,
 #game-board {
   text-align: center;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.6
+  ); /* Halbtransparenter Hintergrund */
+  border: 2px solid #333; /* Schwarzer Rahmen */
+  padding: 20px;
+  border-radius: 10px; /* Abgerundete Ecken */
+  margin: 20px; /* Abstand zum Rand */
 }
 
 button {
@@ -58,4 +71,23 @@ button {
 
 .player-info {
   font-weight: bold;
+}
+
+.category-cell {
+  font-weight: bold;
+}
+
+.question-cell div {
+  font-weight: bold;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px;
+  font-size: 0.6rem;
 }

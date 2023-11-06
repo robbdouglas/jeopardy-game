@@ -1,152 +1,154 @@
+// CATEGORIES: Harry Potter, Music, Idioms, Web Development, Video Games
+
 let questions = [
   new Question(
-    "Geographie",
+    "Harry Potter",
     100,
-    "Was ist die Hauptstadt von Frankreich?",
-    "Paris"
+    "Who is the headmaster of Hogwarts until the end of the 6th book?",
+    "Dumbledore"
   ),
   new Question(
-    "Geographie",
+    "Harry Potter",
     200,
-    "Was ist die Hauptstadt von Frankreich?",
-    "Paris"
+    "Who is the headmaster of Hogwarts until the end of the 6th book?",
+    "Dumbledore"
   ),
   new Question(
-    "Geographie",
+    "Harry Potter",
     300,
-    "Was ist die Hauptstadt von Frankreich?",
-    "Paris"
+    "Who is the headmaster of Hogwarts until the end of the 6th book?",
+    "Dumbledore"
   ),
   new Question(
-    "Geographie",
+    "Harry Potter",
     400,
-    "Was ist die Hauptstadt von Frankreich?",
-    "Paris"
+    "Who is the headmaster of Hogwarts until the end of the 6th book?",
+    "Dumbledore"
   ),
   new Question(
-    "Geographie",
+    "Harry Potter",
     500,
-    "Was ist die Hauptstadt von Frankreich?",
-    "Paris"
+    "Who is the headmaster of Hogwarts until the end of the 6th book?",
+    "Dumbledore"
   ),
   new Question(
-    "Geschichte",
+    "Music",
     100,
-    "In welchem Jahr wurde die Berliner Mauer errichtet?",
-    "1961"
+    "Who is the lead singer of the band 'Queen'?",
+    "Freddie Mercury"
   ),
   new Question(
-    "Geschichte",
+    "Music",
     200,
-    "In welchem Jahr wurde die Berliner Mauer errichtet?",
-    "1961"
+    "Who is the lead singer of the band 'Queen'?",
+    "Freddie Mercury"
   ),
   new Question(
-    "Geschichte",
+    "Music",
     300,
-    "In welchem Jahr wurde die Berliner Mauer errichtet?",
-    "1961"
+    "Who is the lead singer of the band 'Queen'?",
+    "Freddie Mercury"
   ),
   new Question(
-    "Geschichte",
+    "Music",
     400,
-    "In welchem Jahr wurde die Berliner Mauer errichtet?",
-    "1961"
+    "Who is the lead singer of the band 'Queen'?",
+    "Freddie Mercury"
   ),
   new Question(
-    "Geschichte",
+    "Music",
     500,
-    "In welchem Jahr wurde die Berliner Mauer errichtet?",
-    "1961"
+    "Who is the lead singer of the band 'Queen'?",
+    "Freddie Mercury"
   ),
   new Question(
-    "Sport",
+    "Idioms",
     100,
-    "Wie viele Spieler hat eine Fußballmannschaft?",
-    "11"
+    "What does the idiom 'to be over the moon' mean?",
+    "to be very happy"
   ),
   new Question(
-    "Sport",
+    "Idioms",
     200,
-    "Wie viele Spieler hat eine Fußballmannschaft?",
-    "11"
+    "What does the idiom 'to be over the moon' mean?",
+    "to be very happy"
   ),
   new Question(
-    "Sport",
+    "Idioms",
     300,
-    "Wie viele Spieler hat eine Fußballmannschaft?",
-    "11"
+    "What does the idiom 'to be over the moon' mean?",
+    "to be very happy"
   ),
   new Question(
-    "Sport",
+    "Idioms",
     400,
-    "Wie viele Spieler hat eine Fußballmannschaft?",
-    "11"
+    "What does the idiom 'to be over the moon' mean?",
+    "to be very happy"
   ),
   new Question(
-    "Sport",
+    "Idioms",
     500,
-    "Wie viele Spieler hat eine Fußballmannschaft?",
-    "11"
+    "What does the idiom 'to be over the moon' mean?",
+    "to be very happy"
   ),
   new Question(
-    "Technik",
+    "Web Development",
     100,
-    "Wer hat das erste Smartphone erfunden?",
-    "Apple"
+    "What does HTML stand for?",
+    "Hyper Text Markup Language"
   ),
   new Question(
-    "Technik",
+    "Web Development",
     200,
-    "Wer hat das erste Smartphone erfunden?",
-    "Apple"
+    "What does HTML stand for?",
+    "Hyper Text Markup Language"
   ),
   new Question(
-    "Technik",
+    "Web Development",
     300,
-    "Wer hat das erste Smartphone erfunden?",
-    "Apple"
+    "What does HTML stand for?",
+    "Hyper Text Markup Language"
   ),
   new Question(
-    "Technik",
+    "Web Development",
     400,
-    "Wer hat das erste Smartphone erfunden?",
-    "Apple"
+    "What does HTML stand for?",
+    "Hyper Text Markup Language"
   ),
   new Question(
-    "Technik",
+    "Web Development",
     500,
-    "Wer hat das erste Smartphone erfunden?",
-    "Apple"
+    "What does HTML stand for?",
+    "Hyper Text Markup Language"
   ),
   new Question(
-    "Politik",
+    "Video Games",
     100,
-    "Wer ist der Bundeskanzler von Deutschland?",
-    "Angela Merkel"
+    "What is the name of the main character in the game 'The Legend of Zelda'?",
+    "Link"
   ),
   new Question(
-    "Politik",
+    "Video Games",
     200,
-    "Wer ist der Bundeskanzler von Deutschland?",
-    "Angela Merkel"
+    "What is the name of the main character in the game 'The Legend of Zelda'?",
+    "Link"
   ),
   new Question(
-    "Politik",
+    "Video Games",
     300,
-    "Wer ist der Bundeskanzler von Deutschland?",
-    "Angela Merkel"
+    "What is the name of the main character in the game 'The Legend of Zelda'?",
+    "Link"
   ),
   new Question(
-    "Politik",
+    "Video Games",
     400,
-    "Wer ist der Bundeskanzler von Deutschland?",
-    "Angela Merkel"
+    "What is the name of the main character in the game 'The Legend of Zelda'?",
+    "Link"
   ),
   new Question(
-    "Politik",
+    "Video Games",
     500,
-    "Wer ist der Bundeskanzler von Deutschland?",
-    "Angela Merkel"
+    "What is the name of the main character in the game 'The Legend of Zelda'?",
+    "Link"
   ),
 ];
