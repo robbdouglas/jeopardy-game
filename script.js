@@ -265,6 +265,9 @@ function createPlayerInputs() {
   playerNamesDiv.appendChild(startButton);
 }
 
+// set player count to 1 as default
+playerCountSelect.value = "1";
+
 function startGame() {
   players = [];
 
@@ -277,18 +280,6 @@ function startGame() {
   document.getElementById("game-board").style.display = "block";
 
   renderGameBoard();
-}
-
-// set player count to 1-4
-
-function validatePlayerCount() {
-  let playerCountInput = document.getElementById("player-count");
-  let playerCount = parseInt(playerCountInput.value);
-
-  if (isNaN(playerCount) || playerCount < 1 || playerCount > 4) {
-    alert("Error: Please enter a player count between 1 and 4!");
-    playerCountInput.value = "";
-  }
 }
 
 function renderGameBoard() {

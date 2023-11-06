@@ -21,11 +21,11 @@ body {
     255,
     255,
     0.6
-  ); /* Halbtransparenter Hintergrund */
-  border: 2px solid #333; /* Schwarzer Rahmen */
+  ); 
+  border: 2px solid #333; 
   padding: 20px;
-  border-radius: 10px; /* Abgerundete Ecken */
-  margin: 20px; /* Abstand zum Rand */
+  border-radius: 10px; 
+  margin: 20px; 
 }
 
 button {
