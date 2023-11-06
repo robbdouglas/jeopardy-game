@@ -16,16 +16,11 @@ body {
 #start-screen,
 #game-board {
   text-align: center;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.6
-  ); 
-  border: 2px solid #333; 
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid #333;
   padding: 20px;
-  border-radius: 10px; 
-  margin: 20px; 
+  border-radius: 10px;
+  margin: 20px;
 }
 
 button {
@@ -64,9 +59,10 @@ button {
 
 .question-card {
   border: 1px solid #ccc;
+  border-radius: 10px;
   padding: 10px;
   margin: 5px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .player-info {
@@ -79,6 +75,12 @@ button {
 
 .question-cell div {
   font-weight: bold;
+}
+
+.transparent-bg {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 10px;
 }
 
 footer {

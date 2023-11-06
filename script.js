@@ -332,49 +332,77 @@ function displayAnswers(questionIndex) {
     return;
   }
 
-  let answers = questions[questionIndex].answers;
-  let answerString = answers
-    .map((answer, index) => `${index + 1}. ${answer}`)
-    .join("\n");
-  let userAnswer = prompt(
-    `${questions[questionIndex].question}\n\n${answerString}`
-  );
+  let gameBoard = document.getElementById("game-board");
+  gameBoard.style.display = "none";
 
-  if (
-    !userAnswer ||
-    isNaN(userAnswer) ||
-    userAnswer < 1 ||
-    userAnswer > answers.length
-  ) {
-    alert(
-      "Ungültige Eingabe! Wähle eine der angegebenen Antwortmöglichkeiten."
-    );
-    return;
+  let questionCard = document.createElement("div");
+  questionCard.classList.add("question-card");
+
+  let questionText = document.createElement("div");
+  questionText.innerHTML = `<p>${questions[questionIndex].question}</p>`;
+
+  let answerOptions = document.createElement("div");
+  answerOptions.style.display = "none"; // Hide answer options initially
+
+  questions[questionIndex].answers.forEach((answer, index) => {
+    let answerButton = document.createElement("button");
+    answerButton.textContent = answer;
+    answerButton.onclick = function () {
+      checkAnswer(questionIndex, index);
+    };
+    answerOptions.appendChild(answerButton);
+  });
+
+  questionCard.appendChild(questionText);
+  questionCard.appendChild(answerOptions);
+  document.body.appendChild(questionCard);
+
+  let continueButton = document.createElement("button");
+  continueButton.textContent = "Continue";
+  continueButton.style.display = "none";
+  continueButton.onclick = function () {
+    document.body.removeChild(questionCard);
+    document.body.removeChild(messageBox);
+    gameBoard.style.display = "block";
+    continueButton.style.display = "none";
+  };
+
+  let messageBox = document.createElement("div");
+  messageBox.classList.add("message-box", "transparent-bg");
+  messageBox.style.display = "none"; // Hide message box initially
+
+  document.body.appendChild(messageBox);
+  document.body.appendChild(continueButton);
+
+  function checkAnswer(questionIndex, selectedAnswerIndex) {
+    let selectedAnswer = questions[questionIndex].answers[selectedAnswerIndex];
+    let isCorrect = selectedAnswer === questions[questionIndex].correctAnswer;
+
+    let pointsEarned = isCorrect ? questions[questionIndex].points : 0;
+    players[currentPlayerIndex].points += pointsEarned;
+
+    messageBox.innerHTML = isCorrect
+      ? `<p>Richtig! Du hast ${pointsEarned} Punkte erhalten.</p>`
+      : `<p>Leider falsch! Die richtige Antwort war ${questions[questionIndex].correctAnswer}.</p>`;
+
+    messageBox.style.display = "block"; // Show message box
+    continueButton.style.display = "block";
+
+    questions[questionIndex].used = true;
+
+    currentPlayerIndex = (currentPlayerIndex + 1) % playerCount;
+
+    if (questions.some((q) => !q.used)) {
+      renderGameBoard();
+    } else {
+      endGame();
+    }
+
+    displayPlayerInfo();
   }
 
-  let selectedAnswer = answers[userAnswer - 1];
-  let isCorrect = selectedAnswer === questions[questionIndex].correctAnswer;
-
-  let pointsEarned = isCorrect ? questions[questionIndex].points : 0;
-  players[currentPlayerIndex].points += pointsEarned;
-
-  alert(
-    isCorrect
-      ? `Richtig! Du hast ${pointsEarned} Punkte erhalten.`
-      : `Leider falsch! Die richtige Antwort war ${questions[questionIndex].correctAnswer}.`
-  );
-
-  questions[questionIndex].used = true;
-
-  currentPlayerIndex = (currentPlayerIndex + 1) % playerCount;
-
-  if (questions.some((q) => !q.used)) {
-    renderGameBoard();
-  } else {
-    endGame();
-  }
-
-  displayPlayerInfo();
+  // Show answer options
+  answerOptions.style.display = "block";
 }
 
 function displayPlayerInfo() {
