@@ -342,7 +342,7 @@ function displayAnswers(questionIndex) {
   questionText.innerHTML = `<p>${questions[questionIndex].question}</p>`;
 
   let answerOptions = document.createElement("div");
-  answerOptions.style.display = "none"; // Hide answer options initially
+  answerOptions.style.display = "none";
 
   questions[questionIndex].answers.forEach((answer, index) => {
     let answerButton = document.createElement("button");
@@ -382,8 +382,8 @@ function displayAnswers(questionIndex) {
     players[currentPlayerIndex].points += pointsEarned;
 
     messageBox.innerHTML = isCorrect
-      ? `<p>Richtig! Du hast ${pointsEarned} Punkte erhalten.</p>`
-      : `<p>Leider falsch! Die richtige Antwort war ${questions[questionIndex].correctAnswer}.</p>`;
+      ? `<p>Correct! You just earned ${pointsEarned} points. You have a score of ${players[currentPlayerIndex].points} points now.</p>`
+      : `<p>Wrong answer! The correct answer would have been ${questions[questionIndex].correctAnswer}.</p>`;
 
     messageBox.style.display = "block"; // Show message box
     continueButton.style.display = "block";
@@ -431,6 +431,6 @@ function endGame() {
     prev.points > current.points ? prev : current
   );
   alert(
-    `Spiel beendet! ${winner.name} hat gewonnen mit ${winner.points} Punkten.`
+    `The game is over! ${winner.name} is the winner with ${winner.points} points! Make some noise! 🎉🎉🎉`
   );
 }
