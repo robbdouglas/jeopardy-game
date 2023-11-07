@@ -265,8 +265,7 @@ function createPlayerInputs() {
   playerNamesDiv.appendChild(startButton);
 }
 
-// set player count to 1 as default
-playerCountSelect.value = "1";
+
 
 function startGame() {
   players = [];
