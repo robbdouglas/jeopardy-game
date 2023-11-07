@@ -85,64 +85,64 @@ let questions = [
     "Freddie Mercury"
   ),
   new Question(
-    "Movies",
+    "Web Development",
     100,
-    "Who is the director of the movie 'Titanic'?",
+    "What does HTML stand for?",
     [
-      "James Cameron",
-      "Steven Spielberg",
-      "Quentin Tarantino",
-      "Martin Scorsese",
+      "Hyper Text Markup Language",
+      "Hyperlinks and Text Markup Language",
+      "Home Tool Markup Language",
+      "Hyper Text Makeup Language",
     ],
-    "James Cameron"
+    "Hyper Text Markup Language"
   ),
   new Question(
-    "Movies",
+    "Web Development",
     200,
-    "Who is the director of the movie 'Titanic'?",
+    "What does HTML stand for?",
     [
-      "James Cameron",
-      "Steven Spielberg",
-      "Quentin Tarantino",
-      "Martin Scorsese",
+      "Hyper Text Markup Language",
+      "Hyperlinks and Text Markup Language",
+      "Home Tool Markup Language",
+      "Hyper Text Makeup Language",
     ],
-    "James Cameron"
+    "Hyper Text Markup Language"
   ),
   new Question(
-    "Movies",
+    "Web Development",
     300,
-    "Who is the director of the movie 'Titanic'?",
+    "What does HTML stand for?",
     [
-      "James Cameron",
-      "Steven Spielberg",
-      "Quentin Tarantino",
-      "Martin Scorsese",
+      "Hyper Text Markup Language",
+      "Hyperlinks and Text Markup Language",
+      "Home Tool Markup Language",
+      "Hyper Text Makeup Language",
     ],
-    "James Cameron"
+    "Hyper Text Markup Language"
   ),
   new Question(
-    "Movies",
+    "Web Development",
     400,
-    "Who is the director of the movie 'Titanic'?",
+    "What does HTML stand for?",
     [
-      "James Cameron",
-      "Steven Spielberg",
-      "Quentin Tarantino",
-      "Martin Scorsese",
+      "Hyper Text Markup Language",
+      "Hyperlinks and Text Markup Language",
+      "Home Tool Markup Language",
+      "Hyper Text Makeup Language",
     ],
-    "James Cameron"
+    "Hyper Text Markup Language"
   ),
   new Question(
-    "Movies",
+    "Web Development",
     500,
-    "Who is the director of the movie 'Titanic'?",
+    "What does HTML stand for?",
     [
-      "James Cameron",
-      "Steven Spielberg",
-      "Quentin Tarantino",
-      "Martin Scorsese",
+      "Hyper Text Markup Language",
+      "Hyperlinks and Text Markup Language",
+      "Home Tool Markup Language",
+      "Hyper Text Makeup Language",
     ],
-    "James Cameron"
+    "Hyper Text Markup Language"
   ),
   new Question(
     "Idioms",
@@ -205,39 +205,39 @@ let questions = [
     "to be very happy"
   ),
   new Question(
-    "Geography",
+    "Video Games",
     100,
-    "What is the capital of Germany?",
-    ["Berlin", "Hamburg", "Munich", "Frankfurt"],
-    "Berlin"
+    "Which game is the best-selling video game of all time?",
+    ["Minecraft", "Tetris", "GTA V", "Wii Sports"],
+    "Minecraft"
   ),
   new Question(
-    "Geography",
+    "Video Games",
     200,
-    "What is the capital of Germany?",
-    ["Berlin", "Hamburg", "Munich", "Frankfurt"],
-    "Berlin"
+    "Which game is the best-selling video game of all time?",
+    ["Minecraft", "Tetris", "GTA V", "Wii Sports"],
+    "Minecraft"
   ),
   new Question(
-    "Geography",
+    "Video Games",
     300,
-    "What is the capital of Germany?",
-    ["Berlin", "Hamburg", "Munich", "Frankfurt"],
-    "Berlin"
+    "Which game is the best-selling video game of all time?",
+    ["Minecraft", "Tetris", "GTA V", "Wii Sports"],
+    "Minecraft"
   ),
   new Question(
-    "Geography",
+    "Video Games",
     400,
-    "What is the capital of Germany?",
-    ["Berlin", "Hamburg", "Munich", "Frankfurt"],
-    "Berlin"
+    "Which game is the best-selling video game of all time?",
+    ["Minecraft", "Tetris", "GTA V", "Wii Sports"],
+    "Minecraft"
   ),
   new Question(
-    "Geography",
+    "Video Games",
     500,
-    "What is the capital of Germany?",
-    ["Berlin", "Hamburg", "Munich", "Frankfurt"],
-    "Berlin"
+    "Which game is the best-selling video game of all time?",
+    ["Minecraft", "Tetris", "GTA V", "Wii Sports"],
+    "Minecraft"
   ),
 ];
 
@@ -245,7 +245,11 @@ function createPlayerInputs() {
   playerCount = document.getElementById("player-count").value;
 
   let startScreen = document.getElementById("start-screen");
-  startScreen.innerHTML = `<h1>JEOPARDY</h1><p>Nice! We play with ${playerCount} players! Please enter your names!</p>`;
+  startScreen.innerHTML = `<h1>JEOPARDY</h1><p>Nice! ${
+    playerCount > 1
+      ? "We play with " + playerCount + " players! Please enter your names!"
+      : "You're playing alone! What's your name?"
+  } </p>`;
 
   let playerNamesDiv = document.createElement("div");
   playerNamesDiv.id = "player-names";
@@ -265,8 +269,6 @@ function createPlayerInputs() {
   playerNamesDiv.appendChild(startButton);
 }
 
-
-
 function startGame() {
   players = [];
 
@@ -285,10 +287,10 @@ function renderGameBoard() {
   let gameBoard = document.getElementById("game-board");
   gameBoard.innerHTML = "";
 
-  // Eindeutige Kategorien extrahieren
+  // extract unique categories
   let uniqueCategories = Array.from(new Set(questions.map((q) => q.category)));
 
-  // Kategorien erstellen
+  // create category row
   let categoriesRow = document.createElement("div");
   categoriesRow.classList.add("categories-row");
   for (let i = 0; i < uniqueCategories.length; i++) {
@@ -299,7 +301,7 @@ function renderGameBoard() {
   }
   gameBoard.appendChild(categoriesRow);
 
-  // Fragen und Punkte erstellen
+  // create question and points rows
   for (let i = 0; i < 5; i++) {
     let questionRow = document.createElement("div");
     questionRow.classList.add("question-row");
@@ -316,7 +318,7 @@ function renderGameBoard() {
     gameBoard.appendChild(questionRow);
   }
 
-  // Anzeige des aktuellen Spielers
+  // current player info
   let currentPlayerInfo = document.createElement("div");
   currentPlayerInfo.classList.add("player-info");
   currentPlayerInfo.innerHTML = `<p>It's your turn, <span style="color: red">${players[currentPlayerIndex].name}</span>! Please choose your question!</p>`;
@@ -416,7 +418,7 @@ function displayPlayerInfo() {
     playerScores.appendChild(playerScore);
   }
 
-  // Lösche vorhandene Player-Info-Elemente, bevor neue hinzugefügt werden
+  // Remove existing player scores if there are any and append new ones
   let existingPlayerScores = document.getElementsByClassName("player-scores");
   if (existingPlayerScores.length > 0) {
     gameBoard.removeChild(existingPlayerScores[0]);
