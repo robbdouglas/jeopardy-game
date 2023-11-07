@@ -309,10 +309,19 @@ function renderGameBoard() {
       let questionIndex = j * 5 + i;
       let questionCell = document.createElement("div");
       questionCell.classList.add("question-cell");
-      questionCell.innerHTML = `
-                    <div>${questions[questionIndex].points}</div>
-                    <button onclick="displayAnswers(${questionIndex})">Show question</button>
-                `;
+
+      if (questions[questionIndex].used) {
+        // Set grey background and display "already played" message in red
+        questionCell.classList.add("already-played");
+        questionCell.innerHTML = `<div style="color:red">Already played</div>`;
+      } else {
+        // Display points and button
+        questionCell.innerHTML = `
+          <div>${questions[questionIndex].points}</div>
+          <button onclick="displayAnswers(${questionIndex}, this)">Show question</button>
+        `;
+      }
+
       questionRow.appendChild(questionCell);
     }
     gameBoard.appendChild(questionRow);
