@@ -13,6 +13,8 @@ let playerCount;
 let currentPlayerIndex = 0;
 let players = [];
 
+let timer;
+
 let questions = [
   new Question(
     "Harry Potter",
@@ -336,12 +338,9 @@ function renderGameBoard() {
   displayPlayerInfo();
 }
 
-function displayAnswers(questionIndex) {
-  if (questions[questionIndex].used) {
-    alert("Diese Frage wurde bereits gespielt!");
-    return;
-  }
+// Timer
 
+function displayAnswers(questionIndex) {
   let gameBoard = document.getElementById("game-board");
   gameBoard.style.display = "none";
 
@@ -352,15 +351,30 @@ function displayAnswers(questionIndex) {
   questionText.innerHTML = `<p>${questions[questionIndex].question}</p>`;
 
   let answerOptions = document.createElement("div");
-  answerOptions.style.display = "none";
+  answerOptions.classList.add("answer-options");
+
+  // Buchstaben A, B, C, D
+  const answerLetters = ["A", "B", "C", "D"];
 
   questions[questionIndex].answers.forEach((answer, index) => {
     let answerButton = document.createElement("button");
-    answerButton.textContent = answer;
+    answerButton.innerHTML = `<span style="font-weight:bold">${answerLetters[index]}:</span> ${answer}`;
+    answerButton.classList.add("answer-button"); // Füge Klasse für Styling hinzu
     answerButton.onclick = function () {
       checkAnswer(questionIndex, index);
     };
     answerOptions.appendChild(answerButton);
+
+    // Füge nach jedem zweiten Button einen Zeilenumbruch und Abstand hinzu
+    if ((index + 1) % 2 === 0) {
+      answerOptions.appendChild(document.createElement("br"));
+      answerOptions.appendChild(document.createElement("br")); // Zusätzlicher Zeilenumbruch für Abstand
+    } else if (index < questions[questionIndex].answers.length - 1) {
+      // Füge horizontalen Abstand zwischen den Buttons hinzu
+      let space = document.createElement("span");
+      space.textContent = "   "; // Anpassbarer Abstand
+      answerOptions.appendChild(space);
+    }
   });
 
   questionCard.appendChild(questionText);
@@ -375,11 +389,16 @@ function displayAnswers(questionIndex) {
     document.body.removeChild(messageBox);
     gameBoard.style.display = "block";
     continueButton.style.display = "none";
+
+    // Aktiviere alle Antwortbuttons wieder
+    document.querySelectorAll(".answer-button").forEach((button) => {
+      button.disabled = false;
+    });
   };
 
   let messageBox = document.createElement("div");
   messageBox.classList.add("message-box", "transparent-bg");
-  messageBox.style.display = "none"; // Hide message box initially
+  messageBox.style.display = "none"; // Verstecke Nachrichtenbox initial
 
   document.body.appendChild(messageBox);
   document.body.appendChild(continueButton);
@@ -393,10 +412,15 @@ function displayAnswers(questionIndex) {
 
     messageBox.innerHTML = isCorrect
       ? `<p>Correct! You just earned ${pointsEarned} points. You have a score of ${players[currentPlayerIndex].points} points now.</p>`
-      : `<p>Wrong answer! The correct answer would have been ${questions[questionIndex].correctAnswer}.</p>`;
+      : `<p>Wrong answer! The correct answer would have been <span style="font-weight:bold">${questions[questionIndex].correctAnswer}</span>.</p>`;
 
-    messageBox.style.display = "block"; // Show message box
+    messageBox.style.display = "block"; // Zeige Nachrichtenbox
     continueButton.style.display = "block";
+
+    // Deaktiviere alle Antwortbuttons
+    document.querySelectorAll(".answer-button").forEach((button) => {
+      button.disabled = true;
+    });
 
     questions[questionIndex].used = true;
 
@@ -411,7 +435,7 @@ function displayAnswers(questionIndex) {
     displayPlayerInfo();
   }
 
-  // Show answer options
+  // Zeige Antwortmöglichkeiten
   answerOptions.style.display = "block";
 }
 
