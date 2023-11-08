@@ -11,6 +11,7 @@
 - timer to answer the questions
 - create questions and remove placeholder
 - responsive design
+- game ending not in alert but in body
 
 ## Done
 
