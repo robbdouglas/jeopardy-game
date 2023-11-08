@@ -87,7 +87,7 @@ let questions = [
     "Freddie Mercury"
   ),
   new Question(
-    "Web Development",
+    "Web Dev",
     100,
     "What does HTML stand for?",
     [
@@ -99,7 +99,7 @@ let questions = [
     "Hyper Text Markup Language"
   ),
   new Question(
-    "Web Development",
+    "Web Dev",
     200,
     "What does HTML stand for?",
     [
@@ -111,7 +111,7 @@ let questions = [
     "Hyper Text Markup Language"
   ),
   new Question(
-    "Web Development",
+    "Web Dev",
     300,
     "What does HTML stand for?",
     [
@@ -123,7 +123,7 @@ let questions = [
     "Hyper Text Markup Language"
   ),
   new Question(
-    "Web Development",
+    "Web Dev",
     400,
     "What does HTML stand for?",
     [
@@ -135,7 +135,7 @@ let questions = [
     "Hyper Text Markup Language"
   ),
   new Question(
-    "Web Development",
+    "Web Dev",
     500,
     "What does HTML stand for?",
     [
@@ -447,7 +447,7 @@ function displayPlayerInfo() {
   for (let i = 0; i < playerCount; i++) {
     let playerScore = document.createElement("div");
     playerScore.classList.add("player-score");
-    playerScore.innerHTML = `${players[i].name}: ${players[i].points} points`;
+    playerScore.innerHTML = `<span style="font-weight:bold">${players[i].name}:</span> ${players[i].points} points`;
     playerScores.appendChild(playerScore);
   }
 

@@ -17,7 +17,8 @@ body {
 #game-board {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.6);
-  border: 2px solid #333;
+  border: 1px solid #333;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 10px;
   margin: 20px;
@@ -31,6 +32,8 @@ button {
 
 .categories-row {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .category-cell,
@@ -41,6 +44,14 @@ button {
   margin: 5px;
   background-color: #fff;
   text-align: center;
+}
+
+.category-cell {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.question-cell {
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .question-row {
@@ -106,4 +117,3 @@ footer {
   color: red;
   margin: 0;
 }
-
