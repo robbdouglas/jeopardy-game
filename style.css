@@ -94,17 +94,6 @@ button {
   border-radius: 10px;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 10px;
-  font-size: 0.6rem;
-}
-
 .question-cell.already-played {
   background-color: #333;
 }
@@ -117,3 +106,20 @@ footer {
   color: red;
   margin: 0;
 }
+
+input {
+  margin: 0 20px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px;
+  font-size: 0.6rem;
+}
+
+

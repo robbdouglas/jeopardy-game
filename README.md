@@ -2,7 +2,6 @@
 
 ## To Do
 
-- margin name input and button
 - category style
 - answer style
 - highscore logic
@@ -22,3 +21,5 @@
 - add A B C D in bold to the answers
 - answeres must be clickable only once and then disabled
 - arrange answers similar to who wants to be a millionaire
+- margin name input and button
+

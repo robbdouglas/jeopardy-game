@@ -447,7 +447,9 @@ function displayPlayerInfo() {
   for (let i = 0; i < playerCount; i++) {
     let playerScore = document.createElement("div");
     playerScore.classList.add("player-score");
-    playerScore.innerHTML = `<span style="font-weight:bold">${players[i].name}:</span> ${players[i].points} points`;
+    playerScore.innerHTML = `<span style="font-weight:bold">${players[i].name}</span> (Player ${[
+      i + 1,
+    ]}):  ${players[i].points} points`;
     playerScores.appendChild(playerScore);
   }
 
