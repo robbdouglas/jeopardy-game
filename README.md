@@ -11,6 +11,9 @@
 - create questions and remove placeholder
 - responsive design
 - game ending not in alert but in body
+- remove pointer cursor for disabled buttons
+- message with player info on top of board
+- every question card must be as big as the biggest question
 
 ## Done
 
