@@ -2,7 +2,6 @@
 
 ## To Do
 
-- category style
 - highscore logic
 - higher resolution background image
 - h1 style
@@ -25,5 +24,6 @@
 - remove pointer cursor for disabled buttons
 - create questions and remove placeholder
 - answer style
+- category style
 
 
