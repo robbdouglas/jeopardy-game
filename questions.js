@@ -47,41 +47,40 @@ let questions = [
     "Gelum Solum"
   ),
   new Question(
-    "Music",
+    "Berlin",
     100,
-    "Who is the lead singer of the band 'Queen'?",
-    ["Freddie Mercury", "Brian May", "Roger Taylor", "John Deacon"],
-    "Freddie Mercury"
+    "What is the name of the river that flows through Berlin?",
+    ["Spree", "Elbe", "Rhine", "Danube"],
+    "Spree"
   ),
   new Question(
-    "Music",
+    "Berlin",
     200,
-    "What was the former name of the band 'Electric Callboy'?",
-    ["Energy Callboy", "Edgy Callboy", "Eskimo Callboy", "Epic Callboy"],
-    "Eskimo Callboy"
+    "Which of the following gates (Tore) does not exist in Berlin?",
+    ["Brandenburger Tor", "Münchner Tor", "Kottbusser Tor", "Schlesisches Tor"],
+    "Münchner Tor"
   ),
   new Question(
-    "Music",
+    "Berlin",
     300,
-    "Which if the following bands has a female lead singer?",
-    ["Tonight Alive", "All Time Low", "Green Day", "Boyce Avenue"],
-    "Tonight Alive"
+    "Which district (Bezirk) does not exist in Berlin?",
+    ["Mitte", "Prenzlauer Berg", "Charlottenburg", "Maxvorstadt"],
+    "Maxvorstadt"
   ),
   new Question(
-    "Music",
+    "Berlin",
     400,
-    "Who is the lead singer of the band 'Against the Current'?",
-    ["Tamara Faye", "Chrissy Costanza", "Emily Warren", "Lizzy LeMare"],
-    "Chrissy Costanza"
+    "Which is the subway line between main station (Hauptbahnhof) and Hönow?",
+    ["U1", "U5", "U6", "U8"],
+    "U5"
   ),
   new Question(
-    "Music",
+    "Berlin",
     500,
-    "Which of the following bands is not an alternative / heavy metal band?",
-    ["Falling in Reverse", "Bring me the Horizon", "Pendulum", "I Prevail"],
-    "Pendulum"
+    "Which area is located in Friedrichshain and is famous for its nightclubs, bars, flee markets and several cultural events?",
+    ["RAW-Gelände", "Mauerpark", "Treptower Park", "Tempelhofer Feld"],
+    "RAW-Gelände"
   ),
-
   new Question(
     "Web Dev",
     100,
@@ -97,50 +96,40 @@ let questions = [
   new Question(
     "Web Dev",
     200,
-    "What does HTML stand for?",
-    [
-      "Hyper Text Makeup Language",
-      "Hyperlinks and Text Markup Language",
-      "Home Tool Markup Language",
-      "Hyper Text Markup Language",
-    ],
-    "Hyper Text Markup Language"
+    "Which of the following programming languages is not a common web development language?",
+    ["JavaScript", "Delphi", "CSS", "HTML"],
+    "Delphi"
   ),
   new Question(
     "Web Dev",
     300,
-    "What does HTML stand for?",
-    [
-      "Hyper Text Markup Language",
-      "Hyperlinks and Text Markup Language",
-      "Home Tool Markup Language",
-      "Hyper Text Makeup Language",
-    ],
-    "Hyper Text Markup Language"
+    "Which of the following HTML tags does not need a closing tag?",
+    ["p", "img", "div", "section"],
+    "img"
   ),
   new Question(
     "Web Dev",
     400,
-    "What does HTML stand for?",
+    "What is the correct way to create an animation in CSS?",
     [
-      "Hyper Text Markup Language",
-      "Hyperlinks and Text Markup Language",
-      "Home Tool Markup Language",
-      "Hyper Text Makeup Language",
+      "@keyframes myAnimation { ... }",
+      "@animation myAnimation { ... }",
+      "@animate myAnimation { ... }",
+      "@animate-keyframes myAnimation { ... }",
     ],
-    "Hyper Text Markup Language"
+    "@keyframes myAnimation { ... }"
   ),
   new Question(
     "Web Dev",
     500,
-    "What does HTML stand for?",
+    "What is the significance of the keyword 'this' in JavaScript?",
     [
-      "Hyper Text Markup Language",
-      "Hyperlinks and Text Markup Language",
-      "Home Tool Markup Language",
-      "Hyper Text Makeup Language",
+      "It refers to the current working directory of the script",
+      "It refers to the previous object",
+      "It represents the object on which the current function is invoked",
+      "It is an array method to iterate over the current object",
     ],
-    "Hyper Text Markup Language"
+    "It represents the object on which the current function is invoked"
   ),
   new Question(
     "Idioms",
@@ -176,7 +165,7 @@ let questions = [
       "To be barking at a tree",
       "To be searching for something in the wrong place",
     ],
-    "to be searching for something in the wrong place"
+    "To be searching for something in the wrong place"
   ),
   new Question(
     "Idioms",
@@ -240,6 +229,6 @@ let questions = [
       "Paper Mario: The Origami King",
       "Paper Mario 64",
     ],
-    "Paper Mario: 64"
+    "Paper Mario 64"
   ),
 ];

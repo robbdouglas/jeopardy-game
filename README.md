@@ -25,5 +25,6 @@
 - category style
 - timer to answer the questions
 - game ending not in alert but in body
+- display category and points above answers
 
 
