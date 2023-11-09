@@ -113,7 +113,7 @@ input {
 
 .answer-button {
   width: calc(
-    min(300px, 49%)
+    min(500px, 49%)
   ); /* Hier 200px als Beispiel für den festen Wert */
 }
 

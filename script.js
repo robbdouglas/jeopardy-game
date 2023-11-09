@@ -26,125 +26,125 @@ let questions = [
   new Question(
     "Harry Potter",
     200,
-    "Who is the headmaster of Hogwarts until the end of the 6th book?",
-    ["Dumbledore", "Snape", "Voldemort", "Hagrid"],
-    "Dumbledore"
+    "What is the name of the girl who dated Ron Weasley in the 6th book?",
+    ["Hermione", "Lavender", "Parvati", "Cho"],
+    "Lavender"
   ),
   new Question(
     "Harry Potter",
     300,
-    "Who is the headmaster of Hogwarts until the end of the 6th book?",
-    ["Dumbledore", "Snape", "Voldemort", "Hagrid"],
-    "Dumbledore"
+    "The spell 'Sectumsempra' is known for causing deep and slashing wounds. Who was the unintended victim of this spell, cast by Harry Potter?",
+    ["Professor Snape", "Hagrid", "Draco Malfoy", "Luna Lovegood"],
+    "Draco Malfoy"
   ),
   new Question(
     "Harry Potter",
     400,
-    "Who is the headmaster of Hogwarts until the end of the 6th book?",
-    ["Dumbledore", "Snape", "Voldemort", "Hagrid"],
-    "Dumbledore"
+    "In the Room of Requirement, what does Dumbledore's Army use to practice spells and hexes?",
+    [
+      "The Mirror of Erised",
+      "The Pensieve",
+      "The Vanishing Cabinet",
+      "The Dummy Death Eaters",
+    ],
+    "The Dummy Death Eaters"
   ),
   new Question(
     "Harry Potter",
     500,
-    "Who is the headmaster of Hogwarts until the end of the 6th book?",
-    ["Dumbledore", "Snape", "Voldemort", "Hagrid"],
-    "Dumbledore"
+    "In the Triwizard Tournament, what spell did Viktor Krum use to transfigure a shark during the Second Task?",
+    [
+      "Hydrosquamenta",
+      "Aquamutatio Selachimorpha",
+      "Gelum Solum",
+      "Ferula Aquae",
+    ],
+    "Gelum Solum"
   ),
   new Question(
-    "Music",
+    "Berlin",
     100,
-    "Who is the lead singer of the band 'Queen'?",
-    ["Freddie Mercury", "Brian May", "Roger Taylor", "John Deacon"],
-    "Freddie Mercury"
+    "What is the name of the river that flows through Berlin?",
+    ["Spree", "Elbe", "Rhine", "Danube"],
+    "Spree"
   ),
   new Question(
-    "Music",
+    "Berlin",
     200,
-    "Who is the lead singer of the band 'Queen'?",
-    ["Freddie Mercury", "Brian May", "Roger Taylor", "John Deacon"],
-    "Freddie Mercury"
+    "Which of the following gates (Tore) does not exist in Berlin?",
+    ["Brandenburger Tor", "Münchner Tor", "Kottbusser Tor", "Schlesisches Tor"],
+    "Münchner Tor"
   ),
   new Question(
-    "Music",
+    "Berlin",
     300,
-    "Who is the lead singer of the band 'Queen'?",
-    ["Freddie Mercury", "Brian May", "Roger Taylor", "John Deacon"],
-    "Freddie Mercury"
+    "Which district (Bezirk) does not exist in Berlin?",
+    ["Mitte", "Prenzlauer Berg", "Charlottenburg", "Maxvorstadt"],
+    "Maxvorstadt"
   ),
   new Question(
-    "Music",
+    "Berlin",
     400,
-    "Who is the lead singer of the band 'Queen'?",
-    ["Freddie Mercury", "Brian May", "Roger Taylor", "John Deacon"],
-    "Freddie Mercury"
+    "Which is the subway line between main station (Hauptbahnhof) and Hönow?",
+    ["U1", "U5", "U6", "U8"],
+    "U5"
   ),
   new Question(
-    "Music",
+    "Berlin",
     500,
-    "Who is the lead singer of the band 'Queen'?",
-    ["Freddie Mercury", "Brian May", "Roger Taylor", "John Deacon"],
-    "Freddie Mercury"
+    "Which area is located in Friedrichshain and is famous for its nightclubs, bars, flee markets and several cultural events?",
+    ["RAW-Gelände", "Mauerpark", "Treptower Park", "Tempelhofer Feld"],
+    "RAW-Gelände"
   ),
   new Question(
     "Web Dev",
     100,
     "What does HTML stand for?",
     [
-      "Hyper Text Markup Language",
+      "Hyper Text Makeup Language",
       "Hyperlinks and Text Markup Language",
       "Home Tool Markup Language",
-      "Hyper Text Makeup Language",
+      "Hyper Text Markup Language",
     ],
     "Hyper Text Markup Language"
   ),
   new Question(
     "Web Dev",
     200,
-    "What does HTML stand for?",
-    [
-      "Hyper Text Markup Language",
-      "Hyperlinks and Text Markup Language",
-      "Home Tool Markup Language",
-      "Hyper Text Makeup Language",
-    ],
-    "Hyper Text Markup Language"
+    "Which of the following programming languages is not a common web development language?",
+    ["JavaScript", "Delphi", "CSS", "HTML"],
+    "Delphi"
   ),
   new Question(
     "Web Dev",
     300,
-    "What does HTML stand for?",
-    [
-      "Hyper Text Markup Language",
-      "Hyperlinks and Text Markup Language",
-      "Home Tool Markup Language",
-      "Hyper Text Makeup Language",
-    ],
-    "Hyper Text Markup Language"
+    "Which of the following HTML tags does need a closing tag?",
+    ["p", "img", "div", "section"],
+    "img"
   ),
   new Question(
     "Web Dev",
     400,
-    "What does HTML stand for?",
+    "What is the correct way to create an animation in CSS?",
     [
-      "Hyper Text Markup Language",
-      "Hyperlinks and Text Markup Language",
-      "Home Tool Markup Language",
-      "Hyper Text Makeup Language",
+      "@keyframes myAnimation { ... }",
+      "@animation myAnimation { ... }",
+      "@animate myAnimation { ... }",
+      "@animate-keyframes myAnimation { ... }",
     ],
-    "Hyper Text Markup Language"
+    "@keyframes myAnimation { ... }"
   ),
   new Question(
     "Web Dev",
     500,
-    "What does HTML stand for?",
+    "What is the significance of the keyword this in JavaScript?",
     [
-      "Hyper Text Markup Language",
-      "Hyperlinks and Text Markup Language",
-      "Home Tool Markup Language",
-      "Hyper Text Makeup Language",
+      "It refers to the current working directory of the script",
+      "It refers to the previous object",
+      "It represents the object on which the current function is invoked",
+      "It is an array method to iterate over the current object",
     ],
-    "Hyper Text Markup Language"
+    "It represents the object on which the current function is invoked"
   ),
   new Question(
     "Idioms",
@@ -161,64 +161,64 @@ let questions = [
   new Question(
     "Idioms",
     200,
-    "What does the idiom 'to be over the moon' mean?",
+    "What does the idiom 'to burn bridges' mean?",
     [
-      "to be very happy",
-      "to be very sad",
-      "to be very angry",
-      "to be very tired",
+      "to destroy bridges",
+      "to ruin relationships",
+      "to attempt something impossible",
+      "to change your job",
     ],
-    "to be very happy"
+    "to ruin relationships"
   ),
   new Question(
     "Idioms",
     300,
-    "What does the idiom 'to be over the moon' mean?",
+    "What does the idiom 'You're barkin' up the wrong tree' mean?",
     [
-      "to be very happy",
-      "to be very sad",
-      "to be very angry",
-      "to be very tired",
+      "To be mistaken",
+      "To be lost in the woods",
+      "To be barking at a tree",
+      "To be searching for something in the wrong place",
     ],
-    "to be very happy"
+    "To be searching for something in the wrong place"
   ),
   new Question(
     "Idioms",
     400,
-    "What does the idiom 'to be over the moon' mean?",
+    "What does the idiom 'burn the midnight oil' mean?",
     [
-      "to be very happy",
-      "to be very sad",
-      "to be very angry",
-      "to be very tired",
+      "Working late into the night",
+      "Setting something on fire",
+      "Staying up to watch a late-night show",
+      "Partying all night long",
     ],
-    "to be very happy"
+    "Working late into the night"
   ),
   new Question(
     "Idioms",
     500,
-    "What does the idiom 'to be over the moon' mean?",
+    "What does the idiom 'to jump on the bandwagon' mean?",
     [
-      "to be very happy",
-      "to be very sad",
-      "to be very angry",
-      "to be very tired",
+      "Criticize a popular trend",
+      "Join others in doing something fashionable",
+      "Form a new musical group",
+      "Start a parade",
     ],
-    "to be very happy"
+    "Join others in doing something fashionable"
   ),
   new Question(
     "Video Games",
     100,
-    "Which game is the best-selling video game of all time?",
-    ["Minecraft", "Tetris", "GTA V", "Wii Sports"],
-    "Minecraft"
+    " In the game The Legend of Zelda, what is the protagonist's name?",
+    ["Zelda", "Ganondorf", "Link", "Epona"],
+    "Link"
   ),
   new Question(
     "Video Games",
     200,
-    "Which game is the best-selling video game of all time?",
-    ["Minecraft", "Tetris", "GTA V", "Wii Sports"],
-    "Minecraft"
+    "Which of the following video games is not an ego shooter?",
+    ["Call of Duty", "Counter Strike", "League of Legends", "Borderlands"],
+    "League of Legends"
   ),
   new Question(
     "Video Games",
@@ -230,16 +230,21 @@ let questions = [
   new Question(
     "Video Games",
     400,
-    "Which game is the best-selling video game of all time?",
-    ["Minecraft", "Tetris", "GTA V", "Wii Sports"],
-    "Minecraft"
+    "Which of the following Pokémon is not a ground type?",
+    ["Groudon", "Garchomp", "Golem", "Giratina"],
+    "Giratina"
   ),
   new Question(
     "Video Games",
     500,
-    "Which game is the best-selling video game of all time?",
-    ["Minecraft", "Tetris", "GTA V", "Wii Sports"],
-    "Minecraft"
+    "Which of the folliwing games is not a Paper Mario Game?",
+    [
+      "Paper Mario: The Thousand-Year Door",
+      "Paper Mario: Sticker Star",
+      "Paper Mario: The Origami King",
+      "Paper Mario 64",
+    ],
+    "Paper Mario 64"
   ),
 ];
 
