@@ -5,7 +5,6 @@
 - highscore logic
 - higher resolution background image
 - h1 style
-- timer to answer the questions
 - responsive design
 - game ending not in alert but in body
 
@@ -25,5 +24,6 @@
 - create questions and remove placeholder
 - answer style
 - category style
+- timer to answer the questions
 
 
