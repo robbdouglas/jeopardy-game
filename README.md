@@ -8,7 +8,6 @@
 - higher resolution background image
 - h1 style
 - timer to answer the questions
-- create questions and remove placeholder
 - responsive design
 - game ending not in alert but in body
 - already played must be always as big as the other cards
@@ -26,5 +25,6 @@
 - every answer card must be as big as the biggest answer card
 - message with player info on top of board
 - remove pointer cursor for disabled buttons
+- create questions and remove placeholder
 
 

@@ -137,7 +137,7 @@ let questions = [
   new Question(
     "Web Dev",
     500,
-    "What is the significance of the keyword this in JavaScript?",
+    "What is the significance of the keyword 'this' in JavaScript?",
     [
       "It refers to the current working directory of the script",
       "It refers to the previous object",
