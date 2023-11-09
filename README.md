@@ -12,7 +12,6 @@
 - responsive design
 - game ending not in alert but in body
 - remove pointer cursor for disabled buttons
-- message with player info on top of board
 - already played must be always as big as the other cards
 
 ## Done
@@ -26,5 +25,6 @@
 - arrange answers similar to who wants to be a millionaire
 - margin name input and button
 - every answer card must be as big as the biggest answer card
+- message with player info on top of board
 
 

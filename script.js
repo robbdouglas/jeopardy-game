@@ -289,6 +289,12 @@ function renderGameBoard() {
   let gameBoard = document.getElementById("game-board");
   gameBoard.innerHTML = "";
 
+  // current player info
+  let currentPlayerInfo = document.createElement("div");
+  currentPlayerInfo.classList.add("player-info");
+  currentPlayerInfo.innerHTML = `<p>It's your turn, <span style="color: red">${players[currentPlayerIndex].name}</span>! Please choose your question!</p>`;
+  gameBoard.appendChild(currentPlayerInfo);
+
   // extract unique categories
   let uniqueCategories = Array.from(new Set(questions.map((q) => q.category)));
 
@@ -329,20 +335,12 @@ function renderGameBoard() {
     gameBoard.appendChild(questionRow);
   }
 
-  // current player info
-  let currentPlayerInfo = document.createElement("div");
-  currentPlayerInfo.classList.add("player-info");
-  currentPlayerInfo.innerHTML = `<p>It's your turn, <span style="color: red">${players[currentPlayerIndex].name}</span>! Please choose your question!</p>`;
-  gameBoard.appendChild(currentPlayerInfo);
-
   displayPlayerInfo();
 }
 
 function displayAnswers(questionIndex) {
   let gameBoard = document.getElementById("game-board");
   gameBoard.style.display = "none";
-
-  
 
   let questionCard = document.createElement("div");
   questionCard.classList.add("question-card");
