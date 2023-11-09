@@ -6,7 +6,6 @@
 - higher resolution background image
 - h1 style
 - responsive design
-- game ending not in alert but in body
 
 ## Done
 
@@ -25,5 +24,6 @@
 - answer style
 - category style
 - timer to answer the questions
+- game ending not in alert but in body
 
 
