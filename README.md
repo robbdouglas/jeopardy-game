@@ -10,7 +10,6 @@
 - timer to answer the questions
 - responsive design
 - game ending not in alert but in body
-- already played must be always as big as the other cards
 
 ## Done
 
