@@ -111,6 +111,17 @@ input {
   margin: 0 20px;
 }
 
+.answer-button {
+  width: calc(
+    min(300px, 49%)
+  ); /* Hier 200px als Beispiel für den festen Wert */
+}
+
+.answer-button-temp {
+  position: absolute;
+  visibility: hidden;
+}
+
 footer {
   position: fixed;
   bottom: 0;
@@ -121,5 +132,3 @@ footer {
   padding: 10px;
   font-size: 0.6rem;
 }
-
-

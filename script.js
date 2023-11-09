@@ -338,11 +338,11 @@ function renderGameBoard() {
   displayPlayerInfo();
 }
 
-// Timer
-
 function displayAnswers(questionIndex) {
   let gameBoard = document.getElementById("game-board");
   gameBoard.style.display = "none";
+
+  
 
   let questionCard = document.createElement("div");
   questionCard.classList.add("question-card");
@@ -447,9 +447,9 @@ function displayPlayerInfo() {
   for (let i = 0; i < playerCount; i++) {
     let playerScore = document.createElement("div");
     playerScore.classList.add("player-score");
-    playerScore.innerHTML = `<span style="font-weight:bold">${players[i].name}</span> (Player ${[
-      i + 1,
-    ]}):  ${players[i].points} points`;
+    playerScore.innerHTML = `<span style="font-weight:bold">${
+      players[i].name
+    }</span> (Player ${[i + 1]}):  ${players[i].points} points`;
     playerScores.appendChild(playerScore);
   }
 
