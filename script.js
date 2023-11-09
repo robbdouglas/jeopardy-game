@@ -573,3 +573,5 @@ function restartGame() {
   // Aktualisiere die Seite
   location.reload();
 }
+
+

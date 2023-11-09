@@ -136,28 +136,3 @@ footer {
   padding: 10px;
   font-size: 0.6rem;
 }
-
-@media only screen and (max-width: 768px) {
-  body {
-    background-size: contain;
-  }
-
-  #start-screen,
-  #game-board {
-    width: 80%;
-  }
-
-  .categories-row,
-  .question-row {
-    flex-direction: column;
-  }
-
-  .category-cell,
-  .question-cell {
-    width: 100%;
-  }
-
-  .answer-button {
-    width: 100%;
-  }
-}
