@@ -11,7 +11,6 @@
 - create questions and remove placeholder
 - responsive design
 - game ending not in alert but in body
-- remove pointer cursor for disabled buttons
 - already played must be always as big as the other cards
 
 ## Done
@@ -26,5 +25,6 @@
 - margin name input and button
 - every answer card must be as big as the biggest answer card
 - message with player info on top of board
+- remove pointer cursor for disabled buttons
 
 
