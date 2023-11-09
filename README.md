@@ -3,7 +3,6 @@
 ## To Do
 
 - category style
-- answer style
 - highscore logic
 - higher resolution background image
 - h1 style
@@ -25,5 +24,6 @@
 - message with player info on top of board
 - remove pointer cursor for disabled buttons
 - create questions and remove placeholder
+- answer style
 
 
