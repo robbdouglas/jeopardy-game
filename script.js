@@ -19,10 +19,11 @@ let questions = [
   new Question(
     "Harry Potter",
     100,
-    "Who is the headmaster of Hogwarts until the end of the 6th book?",
-    ["Dumbledore", "Snape", "Voldemort", "Hagrid"],
-    "Dumbledore"
+    "Which spell is used to open locked doors?",
+    ["Alohomora", "Accio", "Wingardium Leviosa", "Expelliarmus"],
+    "Alohomora"
   ),
+
   new Question(
     "Harry Potter",
     200,
@@ -99,14 +100,14 @@ let questions = [
   new Question(
     "Web Dev",
     100,
-    "What does HTML stand for?",
+    "What does CSS stand for?",
     [
-      "Hyper Text Makeup Language",
-      "Hyperlinks and Text Markup Language",
-      "Home Tool Markup Language",
-      "Hyper Text Markup Language",
+      "Cascading Style Sheets",
+      "Cascading Style Scripts",
+      "Cascading Style Syntax",
+      "Cascading Style Symbols",
     ],
-    "Hyper Text Markup Language"
+    "Cascading Style Sheets"
   ),
   new Question(
     "Web Dev",
@@ -361,7 +362,7 @@ function displayAnswers(questionIndex) {
   let answerOptions = document.createElement("div");
   answerOptions.classList.add("answer-options");
 
-  // Buchstaben A, B, C, D
+  // A, B, C, D
   const answerLetters = ["A", "B", "C", "D"];
 
   questions[questionIndex].answers.forEach((answer, index) => {
@@ -373,14 +374,12 @@ function displayAnswers(questionIndex) {
     };
     answerOptions.appendChild(answerButton);
 
-    // Füge nach jedem zweiten Button einen Zeilenumbruch und Abstand hinzu
     if ((index + 1) % 2 === 0) {
       answerOptions.appendChild(document.createElement("br"));
-      answerOptions.appendChild(document.createElement("br")); // Zusätzlicher Zeilenumbruch für Abstand
+      answerOptions.appendChild(document.createElement("br"));
     } else if (index < questions[questionIndex].answers.length - 1) {
-      // Füge horizontalen Abstand zwischen den Buttons hinzu
       let space = document.createElement("span");
-      space.textContent = "   "; // Anpassbarer Abstand
+      space.textContent = "   ";
       answerOptions.appendChild(space);
     }
   });
@@ -392,7 +391,6 @@ function displayAnswers(questionIndex) {
   timerDisplay.classList.add("timer-display");
   questionCard.appendChild(timerDisplay);
 
-  // Zentriere den Timer
   timerDisplay.style.margin = "auto";
   timerDisplay.style.textAlign = "center";
 
@@ -407,18 +405,16 @@ function displayAnswers(questionIndex) {
     gameBoard.style.display = "block";
     continueButton.style.display = "none";
 
-    // Aktiviere alle Antwortbuttons wieder
     document.querySelectorAll(".answer-button").forEach((button) => {
       button.disabled = false;
     });
 
-    // Entferne den Timer
     clearInterval(timer);
   };
 
   let messageBox = document.createElement("div");
   messageBox.classList.add("message-box", "transparent-bg");
-  messageBox.style.display = "none"; // Verstecke Nachrichtenbox initial
+  messageBox.style.display = "none";
 
   document.body.appendChild(messageBox);
   document.body.appendChild(continueButton);
@@ -443,7 +439,6 @@ function displayAnswers(questionIndex) {
   }
 
   function disableAnswerButtons() {
-    // Deaktiviere alle Antwortbuttons
     document.querySelectorAll(".answer-button").forEach((button) => {
       button.disabled = true;
     });
@@ -451,10 +446,9 @@ function displayAnswers(questionIndex) {
 
   function displayTimeoutMessage() {
     messageBox.innerHTML = "<p>Time's up! No points for that!</p>";
-    messageBox.style.display = "block"; // Zeige Nachrichtenbox
+    messageBox.style.display = "block";
   }
 
-  // Starte Timer für die erste Frage
   startTimer();
 
   function checkAnswer(questionIndex, selectedAnswerIndex) {
@@ -468,19 +462,17 @@ function displayAnswers(questionIndex) {
       ? `<p>Correct! You just earned ${pointsEarned} points. You have a score of ${players[currentPlayerIndex].points} points now.</p>`
       : `<p>Wrong answer! The correct answer would have been <span style="font-weight:bold">${questions[questionIndex].correctAnswer}</span>.</p>`;
 
-    messageBox.style.display = "block"; // Zeige Nachrichtenbox
+    messageBox.style.display = "block";
     continueButton.style.display = "block";
 
-    // Deaktiviere alle Antwortbuttons
     document.querySelectorAll(".answer-button").forEach((button) => {
       button.disabled = true;
     });
 
     questions[questionIndex].used = true;
 
-    // Entferne den Timer
     clearInterval(timer);
-    timerDisplay.style.display = "none"; // Blende den Timer aus
+    timerDisplay.style.display = "none";
 
     currentPlayerIndex = (currentPlayerIndex + 1) % playerCount;
 
@@ -518,20 +510,20 @@ function displayPlayerInfo() {
 }
 
 function endGame() {
-  // Sortiere Spieler basierend auf Punkten
+  // Sort
   players.sort((a, b) => b.points - a.points);
 
-  // Verberge alles außer der finalen Box mit Ranking und Restart-Button
+  // hide start screen and game board
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("game-board").style.display = "none";
 
-  // Verberge die letzte Frage und ihre Elemente
+  // hide question card
   let questionCard = document.querySelector(".question-card");
   if (questionCard) {
     questionCard.style.display = "none";
   }
 
-  // Verberge die Nachrichtenbox und den "Continue"-Button
+  // hide message box and continue button
   let messageBox = document.querySelector(".message-box");
   if (messageBox) {
     messageBox.style.display = "none";
@@ -542,7 +534,7 @@ function endGame() {
     continueButton.style.display = "none";
   }
 
-  // Erstelle die Final Box für Ranking und Restart-Button
+  // create final box and append to body
   let finalBox = document.createElement("div");
   finalBox.id = "final-box";
   finalBox.classList.add("transparent-bg", "box-style");
@@ -556,11 +548,11 @@ function endGame() {
     finalBox.appendChild(rankingInfo);
   }
 
-  // Setze den Stil für die Final Box
+  // display final box
   finalBox.style.display = "block";
   document.body.appendChild(finalBox);
 
-  // Füge den Neustart-Button hinzu
+  // restart button
   let restartButton = document.createElement("button");
   restartButton.id = "restart-button";
   restartButton.classList.add("transparent-bg", "box-style");
@@ -570,8 +562,6 @@ function endGame() {
 }
 
 function restartGame() {
-  // Aktualisiere die Seite
+  // refresh
   location.reload();
 }
-
-

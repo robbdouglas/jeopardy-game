@@ -6,6 +6,7 @@
 - higher resolution background image
 - h1 style
 - responsive design
+- comments for presentation
 
 ## Done
 
