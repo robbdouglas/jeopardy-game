@@ -382,6 +382,15 @@ function displayAnswers(questionIndex) {
 
   questionCard.appendChild(questionText);
   questionCard.appendChild(answerOptions);
+
+  let timerDisplay = document.createElement("div");
+  timerDisplay.classList.add("timer-display");
+  questionCard.appendChild(timerDisplay);
+
+  // Zentriere den Timer
+  timerDisplay.style.margin = "auto";
+  timerDisplay.style.textAlign = "center";
+
   document.body.appendChild(questionCard);
 
   let continueButton = document.createElement("button");
@@ -397,6 +406,9 @@ function displayAnswers(questionIndex) {
     document.querySelectorAll(".answer-button").forEach((button) => {
       button.disabled = false;
     });
+
+    // Entferne den Timer
+    clearInterval(timer);
   };
 
   let messageBox = document.createElement("div");
@@ -405,6 +417,40 @@ function displayAnswers(questionIndex) {
 
   document.body.appendChild(messageBox);
   document.body.appendChild(continueButton);
+
+  let timer;
+
+  function startTimer() {
+    let timeLeft = 30;
+
+    timer = setInterval(() => {
+      timerDisplay.textContent = `Time left: ${timeLeft} seconds`;
+
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        disableAnswerButtons();
+        displayTimeoutMessage();
+        continueButton.style.display = "block";
+      }
+
+      timeLeft--;
+    }, 1000);
+  }
+
+  function disableAnswerButtons() {
+    // Deaktiviere alle Antwortbuttons
+    document.querySelectorAll(".answer-button").forEach((button) => {
+      button.disabled = true;
+    });
+  }
+
+  function displayTimeoutMessage() {
+    messageBox.innerHTML = "<p>Time's up! No points for that!</p>";
+    messageBox.style.display = "block"; // Zeige Nachrichtenbox
+  }
+
+  // Starte Timer für die erste Frage
+  startTimer();
 
   function checkAnswer(questionIndex, selectedAnswerIndex) {
     let selectedAnswer = questions[questionIndex].answers[selectedAnswerIndex];
@@ -427,6 +473,10 @@ function displayAnswers(questionIndex) {
 
     questions[questionIndex].used = true;
 
+    // Entferne den Timer
+    clearInterval(timer);
+    timerDisplay.style.display = "none"; // Blende den Timer aus
+
     currentPlayerIndex = (currentPlayerIndex + 1) % playerCount;
 
     if (questions.some((q) => !q.used)) {
@@ -437,9 +487,6 @@ function displayAnswers(questionIndex) {
 
     displayPlayerInfo();
   }
-
-  // Zeige Antwortmöglichkeiten
-  answerOptions.style.display = "block";
 }
 
 function displayPlayerInfo() {
