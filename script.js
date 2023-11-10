@@ -493,7 +493,7 @@ function displayPlayerInfo() {
     playerScore.classList.add("player-score");
     playerScore.innerHTML = `<span style="font-weight:bold">${
       players[i].name
-    }</span> (Player ${[i + 1]}):  ${players[i].points} points`;
+    }</span> (Player ${[i + 1]}):  <span style="font-weight:bold">${players[i].points}</span> points`;
     playerScores.appendChild(playerScore);
   }
 
