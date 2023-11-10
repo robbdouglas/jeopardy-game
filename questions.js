@@ -1,13 +1,12 @@
-// CATEGORIES: Harry Potter, Music, Idioms, Web Development, Video Games
-
 let questions = [
   new Question(
     "Harry Potter",
     100,
-    "Who is the headmaster of Hogwarts until the end of the 6th book?",
-    ["Dumbledore", "Snape", "Voldemort", "Hagrid"],
-    "Dumbledore"
+    "Which spell is used to open locked doors?",
+    ["Alohomora", "Accio", "Wingardium Leviosa", "Expelliarmus"],
+    "Alohomora"
   ),
+
   new Question(
     "Harry Potter",
     200,
@@ -25,26 +24,21 @@ let questions = [
   new Question(
     "Harry Potter",
     400,
-    "In the Room of Requirement, what does Dumbledore's Army use to practice spells and hexes?",
-    [
-      "The Mirror of Erised",
-      "The Pensieve",
-      "The Vanishing Cabinet",
-      "The Dummy Death Eaters",
-    ],
-    "The Dummy Death Eaters"
+    "In the 'Fantastic Beasts' movies, what is the name of Tina Goldstein's sister?",
+    ["Queenie", "Seraphina", "Leta", "Modesty"],
+    "Queenie"
   ),
   new Question(
     "Harry Potter",
     500,
-    "In the Triwizard Tournament, what spell did Viktor Krum use to transfigure a shark during the Second Task?",
+    "In the Triwizard Tournament, which magical creature did Fleur Delacour face in the first task?",
     [
-      "Hydrosquamenta",
-      "Aquamutatio Selachimorpha",
-      "Gelum Solum",
-      "Ferula Aquae",
+      "Swedish Short-Snout",
+      "Chinese Fireball",
+      "Hungarian Horntail",
+      "Common Welsh Green",
     ],
-    "Gelum Solum"
+    "Common Welsh Green"
   ),
   new Question(
     "Berlin",
@@ -84,14 +78,14 @@ let questions = [
   new Question(
     "Web Dev",
     100,
-    "What does HTML stand for?",
+    "What does CSS stand for?",
     [
-      "Hyper Text Makeup Language",
-      "Hyperlinks and Text Markup Language",
-      "Home Tool Markup Language",
-      "Hyper Text Markup Language",
+      "Cascading Style Sheets",
+      "Cascading Style Scripts",
+      "Cascading Style Syntax",
+      "Cascading Style Symbols",
     ],
-    "Hyper Text Markup Language"
+    "Cascading Style Sheets"
   ),
   new Question(
     "Web Dev",
@@ -134,14 +128,14 @@ let questions = [
   new Question(
     "Idioms",
     100,
-    "What does the idiom 'to be on cloud nine' mean?",
+    "What does the idiom 'to be over the moon' mean?",
     [
-      "To be very happy",
-      "To be very tall",
-      "To be very rich",
-      "To be very lucky",
+      "to be very happy",
+      "to be very sad",
+      "to be very angry",
+      "to be very tired",
     ],
-    "To be very happy"
+    "to be very happy"
   ),
   new Question(
     "Idioms",
@@ -194,7 +188,7 @@ let questions = [
   new Question(
     "Video Games",
     100,
-    " In the game The Legend of Zelda, what is the protagonist's name?",
+    " In the game 'The Legend of Zelda', what is the protagonist's name?",
     ["Zelda", "Ganondorf", "Link", "Epona"],
     "Link"
   ),
