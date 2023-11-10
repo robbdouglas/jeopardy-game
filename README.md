@@ -7,6 +7,7 @@
 - h1 style
 - responsive design
 - comments for presentation
+- after submitting very last answer, continue button does not appear (fix bug)
 
 ## Done
 
