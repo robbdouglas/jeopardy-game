@@ -425,7 +425,9 @@ function displayAnswers(questionIndex) {
     let timeLeft = 30;
 
     timer = setInterval(() => {
-      timerDisplay.textContent = `Time left: ${timeLeft} seconds`;
+      timerDisplay.innerHTML = `Time left: <span style="font-weight: bold; color: ${
+        timeLeft <= 5 ? "red" : "inherit"
+      };">${timeLeft}</span> seconds`;
 
       if (timeLeft <= 0) {
         clearInterval(timer);

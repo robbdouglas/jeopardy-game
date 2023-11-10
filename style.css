@@ -114,7 +114,7 @@ input {
 .answer-button {
   width: calc(
     min(500px, 49%)
-  ); /* Hier 200px als Beispiel für den festen Wert */
+  ); 
 }
 
 .answer-button-temp {
@@ -125,6 +125,8 @@ input {
 .answer-button:disabled {
   cursor: not-allowed;
 }
+
+
 
 footer {
   position: fixed;
