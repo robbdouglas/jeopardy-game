@@ -293,7 +293,7 @@ function renderGameBoard() {
   // current player info
   let currentPlayerInfo = document.createElement("div");
   currentPlayerInfo.classList.add("player-info");
-  currentPlayerInfo.innerHTML = `<p>It's your turn, <span style="color: red">${players[currentPlayerIndex].name}</span>! Please choose your question!</p>`;
+  currentPlayerInfo.innerHTML = `<p>It's your turn, <span style="color: red; text-decoration:underline">${players[currentPlayerIndex].name}</span>! Please choose your question!</p>`;
   gameBoard.appendChild(currentPlayerInfo);
 
   // extract unique categories
