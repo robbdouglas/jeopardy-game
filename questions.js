@@ -134,14 +134,14 @@ let questions = [
   new Question(
     "Idioms",
     100,
-    "What does the idiom 'to be over the moon' mean?",
+    "What does the idiom 'to be on cloud nine' mean?",
     [
-      "to be very happy",
-      "to be very sad",
-      "to be very angry",
-      "to be very tired",
+      "To be very happy",
+      "To be very tall",
+      "To be very rich",
+      "To be very lucky",
     ],
-    "to be very happy"
+    "To be very happy"
   ),
   new Question(
     "Idioms",
