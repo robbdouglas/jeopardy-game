@@ -205,7 +205,7 @@ let questions = [
   new Question(
     "Video Games",
     100,
-    " In the game The Legend of Zelda, what is the protagonist's name?",
+    " In the game 'The Legend of Zelda', what is the protagonist's name?",
     ["Zelda", "Ganondorf", "Link", "Epona"],
     "Link"
   ),
