@@ -1,3 +1,5 @@
+// class for questions
+
 class Question {
   constructor(category, points, question, answers, correctAnswer) {
     this.category = category;
@@ -14,6 +16,8 @@ let currentPlayerIndex = 0;
 let players = [];
 
 let timer;
+
+//questions
 
 let questions = [
   new Question(
@@ -244,6 +248,7 @@ let questions = [
   ),
 ];
 
+// function to create player inputs (number of players and names)
 function createPlayerInputs() {
   playerCount = document.getElementById("player-count").value;
 
@@ -272,6 +277,8 @@ function createPlayerInputs() {
   playerNamesDiv.appendChild(startButton);
 }
 
+// function to start the game
+
 function startGame() {
   players = [];
 
@@ -285,6 +292,8 @@ function startGame() {
 
   renderGameBoard();
 }
+
+// function to render the game board (questions and points)
 
 function renderGameBoard() {
   let gameBoard = document.getElementById("game-board");
@@ -474,12 +483,34 @@ function displayAnswers(questionIndex) {
     currentPlayerIndex = (currentPlayerIndex + 1) % playerCount;
 
     if (questions.some((q) => !q.used)) {
-      renderGameBoard();
-    } else {
-      endGame();
-    }
+      // Wenn noch nicht alle Fragen beantwortet wurden, zeige den Continue Button
+      continueButton.style.display = "block";
+      continueButton.onclick = function () {
+        document.body.removeChild(questionCard);
+        document.body.removeChild(messageBox);
+        gameBoard.style.display = "block";
+        continueButton.style.display = "none";
 
-    displayPlayerInfo();
+        document.querySelectorAll(".answer-button").forEach((button) => {
+          button.disabled = false;
+        });
+
+        clearInterval(timer);
+
+        renderGameBoard();
+        displayPlayerInfo();
+      };
+    } else {
+      // Wenn alle Fragen beantwortet wurden, zeige den Final Score
+      continueButton.style.display = "block";
+      continueButton.onclick = function () {
+        document.body.removeChild(questionCard);
+        document.body.removeChild(messageBox);
+        continueButton.style.display = "none";
+
+        endGame();
+      };
+    }
   }
 }
 
@@ -493,7 +524,9 @@ function displayPlayerInfo() {
     playerScore.classList.add("player-score");
     playerScore.innerHTML = `<span style="font-weight:bold">${
       players[i].name
-    }</span> (Player ${[i + 1]}):  <span style="font-weight:bold">${players[i].points}</span> points`;
+    }</span> (Player ${[i + 1]}):  <span style="font-weight:bold">${
+      players[i].points
+    }</span> points`;
     playerScores.appendChild(playerScore);
   }
 
