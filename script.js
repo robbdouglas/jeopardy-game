@@ -212,7 +212,7 @@ let questions = [
   new Question(
     "Video Games",
     200,
-    "Which of the following video games is not an ego shooter?",
+    "Which of the following video games is not a first person shooter?",
     ["Call of Duty", "Counter Strike", "League of Legends", "Borderlands"],
     "League of Legends"
   ),
