@@ -4,7 +4,6 @@
 
 - highscore logic
 - responsive design
-- comments for presentation
 - question pool for replayability 
 
 ## Done
@@ -27,5 +26,6 @@
 - game ending not in alert but in body
 - display category and points above answers
 - after submitting very last answer, continue button does not appear (fix bug)
+- comments for presentation
 
 

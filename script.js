@@ -286,14 +286,14 @@ function startGame() {
     let playerName = document.getElementById(`player-name-${i + 1}`).value;
     players.push({ name: playerName, points: 0 });
   }
-
+  // hide start screen and show game board
   document.getElementById("start-screen").style.display = "none";
   document.getElementById("game-board").style.display = "block";
 
   renderGameBoard();
 }
 
-// function to render the game board (questions and points)
+// function to render the game board (categories, questions, points, message with active player...)
 
 function renderGameBoard() {
   let gameBoard = document.getElementById("game-board");
@@ -305,7 +305,7 @@ function renderGameBoard() {
   currentPlayerInfo.innerHTML = `<p>It's your turn, <span style="color: red; text-decoration:underline">${players[currentPlayerIndex].name}</span>! Please choose your question!</p>`;
   gameBoard.appendChild(currentPlayerInfo);
 
-  // extract unique categories
+  // extract unique categories (categories are repeated 5 times --> new array with unique categories)
   let uniqueCategories = Array.from(new Set(questions.map((q) => q.category)));
 
   // create category row
@@ -323,13 +323,13 @@ function renderGameBoard() {
   for (let i = 0; i < 5; i++) {
     let questionRow = document.createElement("div");
     questionRow.classList.add("question-row");
+    // create question cells 1-25
     for (let j = 0; j < uniqueCategories.length; j++) {
       let questionIndex = j * 5 + i;
       let questionCell = document.createElement("div");
       questionCell.classList.add("question-cell");
-
+      // if question has already been played, display "already played" message in red with grey background
       if (questions[questionIndex].used) {
-        // Set grey background and display "already played" message in red
         questionCell.classList.add("already-played");
         questionCell.innerHTML = `<div style="color:red">Already played</div>`;
       } else {
@@ -348,6 +348,7 @@ function renderGameBoard() {
   displayPlayerInfo();
 }
 
+// function to display answers (question, category, points, timer, answer options)
 function displayAnswers(questionIndex) {
   let gameBoard = document.getElementById("game-board");
   gameBoard.style.display = "none";
@@ -423,6 +424,7 @@ function displayAnswers(questionIndex) {
   document.body.appendChild(messageBox);
   document.body.appendChild(continueButton);
 
+  // timer logic
   let timer;
 
   function startTimer() {
@@ -430,9 +432,10 @@ function displayAnswers(questionIndex) {
 
     timer = setInterval(() => {
       timerDisplay.innerHTML = `Time left: <span style="font-weight: bold; color: ${
-        timeLeft <= 5 ? "red" : "inherit"
+        timeLeft <= 5 ? "red" : "inherit" // timer color changes to red when 5 seconds left
       };">${timeLeft}</span> seconds`;
 
+      // when time is up, display timeout message and continue button
       if (timeLeft <= 0) {
         clearInterval(timer);
         disableAnswerButtons();
@@ -457,6 +460,7 @@ function displayAnswers(questionIndex) {
 
   startTimer();
 
+  // function to check if answer is correct, show message and continue button
   function checkAnswer(questionIndex, selectedAnswerIndex) {
     let selectedAnswer = questions[questionIndex].answers[selectedAnswerIndex];
     let isCorrect = selectedAnswer === questions[questionIndex].correctAnswer;
@@ -483,7 +487,7 @@ function displayAnswers(questionIndex) {
     currentPlayerIndex = (currentPlayerIndex + 1) % playerCount;
 
     if (questions.some((q) => !q.used)) {
-      // Wenn noch nicht alle Fragen beantwortet wurden, zeige den Continue Button
+      // if there are still questions left, show continue button
       continueButton.style.display = "block";
       continueButton.onclick = function () {
         document.body.removeChild(questionCard);
@@ -501,7 +505,7 @@ function displayAnswers(questionIndex) {
         displayPlayerInfo();
       };
     } else {
-      // Wenn alle Fragen beantwortet wurden, zeige den Final Score
+      // when all questions have been played, show continue button and end game
       continueButton.style.display = "block";
       continueButton.onclick = function () {
         document.body.removeChild(questionCard);
@@ -514,6 +518,7 @@ function displayAnswers(questionIndex) {
   }
 }
 
+// function to display player info (name, points)
 function displayPlayerInfo() {
   let gameBoard = document.getElementById("game-board");
   let playerScores = document.createElement("div");
@@ -539,6 +544,7 @@ function displayPlayerInfo() {
   gameBoard.appendChild(playerScores);
 }
 
+// function to end the game (sort players by points, display final ranking, restart button)
 function endGame() {
   // Sort
   players.sort((a, b) => b.points - a.points);
