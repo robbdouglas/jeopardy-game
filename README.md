@@ -3,7 +3,6 @@
 ## To Do
 
 - highscore logic
-- higher resolution background image
 - responsive design
 - comments for presentation
 - after submitting very last answer, continue button does not appear (fix bug)
