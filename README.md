@@ -9,9 +9,9 @@
 
 ## Done
 
-- all comments in english --> done 
-- if 1 player is playing, it must say "player" instead of "players" --> done 
-- change categories --> done
+- all comments in english
+- if 1 player is playing, it must say "player" instead of "players"
+- change categories
 - already used questions must be disabled visually
 - add A B C D in bold to the answers
 - answeres must be clickable only once and then disabled
